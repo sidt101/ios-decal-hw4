@@ -189,7 +189,7 @@ class PlayerViewController: UIViewController {
 
     func previousTrackTapped(sender: UIButton) {
         let trackTime:Float = Float(self.player.currentTime().value)/Float(self.player.currentTime().timescale)
-        if trackTime < 3 {
+        if trackTime > 3 {
             let CMTimeObject:CMTime = CMTime(seconds: 0, preferredTimescale: CMTimeScale(self.player.currentTime().timescale))
             self.player.seekToTime(CMTimeObject)
         } else {
